@@ -33,11 +33,16 @@ export class UserService {
     });
   }
 
+  async findOne(email: string): Promise<User | null> {
+    return this.prismaService.user.findUnique({
+      where: { email },
+    });
+  }
   async user(
     userWhereUniqueInput: Prisma.UserWhereUniqueInput,
   ): Promise<User | null> {
     return this.prismaService.user.findUnique({
       where: userWhereUniqueInput,
     });
-    
+
 }}
