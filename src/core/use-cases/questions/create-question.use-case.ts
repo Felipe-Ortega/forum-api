@@ -1,7 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { Question } from "src/core/entities/question.entity";
 import type { QuestionRepositoryPort } from "src/ports/outbound/repositories/question.repository.port";
-import { CreateQuestionDto } from "src/questions/dto/create-question.dto";
+import { CreateQuestionDto } from "src/adapters/in/http/questions/dto/create-question.dto";
 
 @Injectable()
 export class CreateQuestionUseCase {

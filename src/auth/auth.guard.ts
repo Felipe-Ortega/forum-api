@@ -21,7 +21,6 @@ export class AuthGuard implements CanActivate {
         //Verifico se o token é válido
         const payload = await this.jwtService.verifyAsync(authorization,
         { secret: process.env.SECRET_KEY }
-
         );
         //Adiciono o payload na request
         request['sub'] = payload;
